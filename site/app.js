@@ -270,13 +270,27 @@ $("#order-form").addEventListener("submit", e => {
   e.preventDefault();
   const f = new FormData(e.target);
   const t = totals();
+  const folio = "EH-" + Math.random().toString(36).slice(2, 6).toUpperCase();
+  guardarPedido({
+    folio,
+    nombre: String(f.get("nombre") || "").slice(0, 80),
+    telefono: String(f.get("telefono") || "").replace(/[^\d+ ]/g, "").slice(0, 20) || null,
+    modo: t.mode,
+    direccion: t.mode === "domicilio" ? String(f.get("direccion") || "").slice(0, 200) : null,
+    notas: String(f.get("notas") || "").slice(0, 300) || null,
+    tupper: !!f.get("tupper") && t.mode === "recoger",
+    items: cart.map(it => ({ nombre: it.name, detalle: it.desc, cantidad: it.qty, precio: it.price, tipo: it.kind, comidas: it.meals })),
+    comidas: cart.reduce((a, it) => a + it.meals * it.qty, 0),
+    tiene_plan: cart.some(it => it.kind === "plan"),
+    subtotal: t.sub, envio: t.env, descuento: t.desc, total: t.total,
+  });
   const lines = [
-    "🍽️ *NUEVO PEDIDO · Los Estudiahambres*",
+    `🍽️ *NUEVO PEDIDO ${folio} · Los Estudiahambres*`,
     "",
     ...cart.map(it => `• ${it.qty}× *${it.name}* — ${money(it.price * it.qty)}${it.unit ? "/" + it.unit : ""}\n   ${it.desc}`),
     "",
     `📍 ${t.mode === "domicilio" ? "A domicilio: " + (f.get("direccion") || "") : "Recojo en campus · 2:00 pm"}`,
-    `👤 ${f.get("nombre")}`,
+    `👤 ${f.get("nombre")}${f.get("telefono") ? " · " + f.get("telefono") : ""}`,
     f.get("notas") ? `⚠️ ${f.get("notas")}` : null,
     f.get("tupper") && t.mode === "recoger" ? "♻️ Llevo mi tupper" : null,
     "",
@@ -292,6 +306,19 @@ $("#order-form").addEventListener("submit", e => {
   $("#modal").hidden = false;
   cart = []; save(); renderCart();
 });
+/* Guarda el pedido en la base de datos (para el dashboard del equipo).
+   keepalive: se envía aunque el navegador cambie a WhatsApp. */
+function guardarPedido(pedido) {
+  const cfg = window.EH_CONFIG;
+  if (!cfg) return;
+  try {
+    fetch(`${cfg.SUPABASE_URL}/rest/v1/pedidos`, {
+      method: "POST", keepalive: true,
+      headers: { "Content-Type": "application/json", apikey: cfg.SUPABASE_KEY, Prefer: "return=minimal" },
+      body: JSON.stringify(pedido),
+    }).catch(() => {});
+  } catch {}
+}
 $("#modal-close").addEventListener("click", () => $("#modal").hidden = true);
 
 /* ---------- Cuenta regresiva ---------- */

@@ -292,7 +292,8 @@
         <label><input type="radio" name="mode" value="recoger" checked> <span>Recojo en campus · 2:00 pm</span></label>
         <label><input type="radio" name="mode" value="domicilio"> <span>A domicilio · +$20</span></label>
       </fieldset>
-      <label class="field">Tu nombre<input required name="nombre" autocomplete="given-name" placeholder="Ej. Pepe"></label>
+      <label class="field">Tu nombre<input required name="nombre" autocomplete="given-name" maxlength="80" placeholder="Ej. Pepe"></label>
+      <label class="field">Tu WhatsApp<input required name="telefono" type="tel" inputmode="tel" autocomplete="tel" maxlength="20" placeholder="Ej. 999 123 4567"></label>
       <label class="field" id="addr-field" hidden>Dirección (zona Anáhuac Mayab)<input name="direccion" placeholder="Residencia, calle, número"></label>
       <label class="field">Alergias o indicaciones<input name="notas" placeholder="Ej. sin cebolla, alérgico al cacahuate"></label>
       <label class="check"><input type="checkbox" name="tupper"> Llevo mi tupper (−$5 por comida, solo para recoger)</label>
@@ -320,6 +321,7 @@
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
+<script src="config.js"></script>
 <script src="app.js"></script>
 </body>
 </html>

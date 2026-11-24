@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Panel · Los Estudiahambres</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#1E1B2E">
+<link rel="icon" href="img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+<!-- LOGIN -->
+<section class="login" id="login" hidden>
+  <form class="login-card" id="login-form">
+    <img src="img/pepe-cel.webp" alt="" width="150" height="150">
+    <h1>PANEL DEL <span>EQUIPO</span></h1>
+    <p>Aquí llegan todos los pedidos de la página.</p>
+    <label>Correo<input name="email" type="email" required autocomplete="username" value="equipo@estudiahambres.mx"></label>
+    <label>Contraseña<input name="password" type="password" required autocomplete="current-password"></label>
+    <button class="btn btn-orange" type="submit">ENTRAR</button>
+    <p class="login-error" id="login-error" role="alert"></p>
+  </form>
+</section>
+
+<!-- APP -->
+<div class="app" id="app" hidden>
+  <header class="top">
+    <div class="brand">
+      <img src="img/pepe-icono.webp" alt="" width="38" height="38">
+      <div><b>los estudia<span>hambres</span></b><small>Panel de pedidos</small></div>
+    </div>
+    <div class="top-right">
+      <span class="live" id="live"><i></i> En vivo</span>
+      <select id="range" aria-label="Periodo">
+        <option value="hoy">Hoy</option>
+        <option value="ayer">Ayer</option>
+        <option value="7">Últimos 7 días</option>
+        <option value="todo">Todo</option>
+      </select>
+      <button class="ghost" id="export" title="Descargar pedidos en CSV">⬇ CSV</button>
+      <button class="ghost" id="logout">Salir</button>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="kpis" id="kpis" aria-label="Resumen"></section>
+
+    <div class="cols">
+      <section class="panel orders">
+        <div class="panel-head">
+          <h2>Pedidos</h2>
+          <input type="search" id="search" placeholder="Buscar nombre, folio, teléfono…" aria-label="Buscar pedido">
+        </div>
+        <div class="tabs" id="tabs" role="tablist"></div>
+        <div class="order-list" id="order-list"></div>
+        <div class="empty" id="empty" hidden>
+          <img src="img/pepe-hambre.webp" alt="" width="140" height="140">
+          <p>Todavía no hay pedidos aquí.<br>Pepe está esperando…</p>
+        </div>
+      </section>
+
+      <aside class="side">
+        <section class="panel">
+          <div class="panel-head"><h2>Lista de cocina</h2><span class="muted" id="kitchen-total"></span></div>
+          <p class="muted small">Comidas a preparar (sin cancelados).</p>
+          <ul class="kitchen" id="kitchen"></ul>
+        </section>
+        <section class="panel">
+          <div class="panel-head"><h2>Entregas</h2></div>
+          <div class="split" id="split"></div>
+        </section>
+        <section class="panel">
+          <div class="panel-head"><h2>Alergias e indicaciones</h2></div>
+          <ul class="alerts" id="alerts"></ul>
+        </section>
+      </aside>
+    </div>
+  </main>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script src="config.js"></script>
+<script src="admin.js"></script>
+</body>
+</html>
