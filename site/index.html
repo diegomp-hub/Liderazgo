@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Los Estudiahambres · Pokés mexicanos de estudiantes para estudiantes</title>
+<meta name="description" content="Comida completa, casera y bien servida para estudiantes de la Anáhuac Mayab. Bowl + agua + postre desde $70. Recoge en campus o pide a domicilio.">
+<meta name="theme-color" content="#FF6B2C">
+<link rel="icon" href="img/favicon.png">
+<meta property="og:title" content="Los Estudiahambres">
+<meta property="og:description" content="Pokés mexicanos caseros, de estudiantes para estudiantes. Comida completa desde $70.">
+<meta property="og:image" content="img/pepe-icono.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Barra de cierre -->
+<div class="topbar">
+  <span id="topbar-text">PEDIDOS CIERRAN 10:30 AM · ENTREGA 2:00 PM</span>
+  <span class="topbar-count" id="countdown">--:--:--</span>
+</div>
+
+<header class="nav">
+  <a href="#inicio" class="nav-logo" aria-label="Los Estudiahambres, inicio">
+    <img src="img/pepe-icono.webp" alt="" width="40" height="40">
+    <span>los estudia<b>hambres</b></span>
+  </a>
+  <nav class="nav-links" aria-label="Secciones">
+    <a href="#menu">Menú</a>
+    <a href="#arma">Arma tu bowl</a>
+    <a href="#planes">Planes</a>
+    <a href="#como">Cómo funciona</a>
+  </nav>
+  <button class="cart-btn" id="open-cart" aria-label="Ver mi pedido">
+    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+    <span class="cart-count" id="cart-count">0</span>
+  </button>
+</header>
+
+<main>
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="pill pill-green">De estudiantes, para estudiantes</span>
+      <h1>COME RICO, SANO Y <span class="hl-orange">BIEN SERVIDO</span> ENTRE CLASES.</h1>
+      <p class="lead">Pokés mexicanos caseros: arroz, proteína, frijoles, verduras y salsa. <b>Bowl + agua + postre</b> por lo mismo que un plato en la cafetería.</p>
+      <div class="hero-ctas">
+        <a href="#menu" class="btn btn-dark">PIDE TU BOWL →</a>
+        <a href="#planes" class="link-under">Ver planes semanales</a>
+      </div>
+      <p class="hero-price">Suelto <b class="price-big">$85</b> · con plan desde <b class="price-big">$70</b> · recoge o a domicilio</p>
+    </div>
+    <div class="hero-art">
+      <div class="hero-photo">
+        <img src="img/campus.webp" alt="Estudiantes comiendo bowls en las bancas del campus" width="1200" height="672">
+        <span class="sticker s1">🔥 450 g de comida</span>
+        <span class="sticker s2">🥤 agua incluida</span>
+        <span class="sticker s3">🍮 + postre</span>
+      </div>
+      <button class="pepe pepe-hero" id="pepe-hero" aria-label="Pepe, la mascota. Tócalo">
+        <img src="img/pepe-hola.webp" alt="Pepe saludando" width="600" height="600">
+        <span class="bubble" id="bubble-hero">¡Qué onda! Soy Pepe 👋 ¿Ya comiste?</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- Marquesina -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>DE ESTUDIANTES PARA ESTUDIANTES ✦</span><span>BOWL + AGUA + POSTRE ✦</span><span>RECOGE O A DOMICILIO ✦</span><span>HECHO EN CASA ✦</span><span>SIN FILAS ✦</span>
+    <span>DE ESTUDIANTES PARA ESTUDIANTES ✦</span><span>BOWL + AGUA + POSTRE ✦</span><span>RECOGE O A DOMICILIO ✦</span><span>HECHO EN CASA ✦</span><span>SIN FILAS ✦</span>
+  </div>
+</div>
+
+<!-- MENU -->
+<section class="section" id="menu">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>ESTA SEMANA <span class="hl-orange">EN EL MENÚ.</span></h2>
+      <img class="pepe-mini" src="img/pepe-bowl.webp" alt="Pepe con un bowl" width="140" height="140">
+    </div>
+    <p class="sub">Cada comida incluye <b>bowl de 450 g + agua del día (500 ml) + postre</b>. Todos los ingredientes están a la vista, por tus alergias.</p>
+    <div class="menu-grid" id="menu-grid"></div>
+  </div>
+</section>
+
+<!-- TE SUENA -->
+<section class="dark" id="problema">
+  <div class="wrap">
+    <div class="problem-head">
+      <div>
+        <p class="eyebrow">¿TE SUENA?</p>
+        <h2>COMER BIEN EN LA UNI ES <span class="hl-yellow">CARO, LENTO Y SIEMPRE LO MISMO.</span></h2>
+      </div>
+      <img class="pepe-sad" src="img/pepe-hambre.webp" alt="Pepe con hambre y la cartera vacía" width="300" height="300">
+    </div>
+    <div class="chips" id="chips">
+      <span class="chip c-cream">$85 por un plato</span>
+      <span class="chip c-orange">fila de 20 minutos</span>
+      <span class="chip c-green">papitas del Oxxo otra vez</span>
+      <span class="chip c-white">¿y hoy qué como?</span>
+      <span class="chip c-cream">comida fría</span>
+      <span class="chip c-yellow">llegué tarde a clase</span>
+      <span class="chip c-orange">sin agua ni postre</span>
+      <span class="chip c-white">¿esto trae cacahuate?</span>
+      <span class="chip c-dim">se me fue la quincena</span>
+      <span class="chip c-dim">cereal de cena</span>
+    </div>
+    <p class="aside">…y mañana, otra vez.</p>
+
+    <hr class="rule">
+
+    <p class="eyebrow">CON LOS ESTUDIAHAMBRES SON 3</p>
+    <div class="steps-big">
+      <p>ELIGES</p><span>↓</span>
+      <p>APARTAS</p><span>↓</span>
+      <p>COMES</p>
+    </div>
+    <p class="aside-2">Pides antes de las 10:30 am y a las 2:00 pm ya tienes tu comida completa. Tú sigues con tu día.</p>
+  </div>
+</section>
+
+<!-- COMPARATIVA -->
+<section class="section" id="compara">
+  <div class="wrap">
+    <h2>NO COMPRAS UN PLATO. <span class="hl-orange">COMPRAS TU COMIDA RESUELTA.</span></h2>
+    <div class="compare">
+      <div class="compare-col them">
+        <h3>Cafetería del campus</h3>
+        <ul>
+          <li><b>$85</b> el plato</li>
+          <li>Agua y postre van aparte</li>
+          <li>Fila a la hora pico</li>
+          <li>Comes en la cafetería</li>
+          <li>Sin descuento por ser cliente frecuente</li>
+        </ul>
+      </div>
+      <div class="compare-col us">
+        <h3>Los Estudiahambres</h3>
+        <ul>
+          <li><b>$85</b> suelto · <b>desde $70</b> con plan</li>
+          <li>Bowl 450 g + agua + postre <b>incluidos</b></li>
+          <li>Apartas desde tu celular, sin fila</li>
+          <li>Recoges en campus o <b>te llega a domicilio</b></li>
+          <li>Entre más comidas a la semana, <b>más barato</b></li>
+        </ul>
+      </div>
+    </div>
+    <div class="stats">
+      <div><b>450 g</b><span>de comida real, bien servida</span></div>
+      <div><b>3 en 1</b><span>bowl + agua + postre</span></div>
+      <div><b>−$15</b><span>por comida con el plan Beca Completa</span></div>
+      <div><b>0 filas</b><span>apartas desde el celular</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ARMA TU BOWL -->
+<section class="section builder-sec" id="arma">
+  <div class="wrap">
+    <h2>ARMA <span class="hl-green">TU BOWL.</span></h2>
+    <p class="sub">Elige cada parte y Pepe te dice qué tal quedó. Mismo precio: <b>$85 suelto</b>.</p>
+    <div class="builder">
+      <div class="builder-steps" id="builder-steps"></div>
+      <aside class="builder-summary">
+        <div class="bowl-viz" id="bowl-viz" aria-hidden="true"></div>
+        <img class="pepe-builder" id="pepe-builder" src="img/pepe-cel.webp" alt="Pepe" width="160" height="160">
+        <p class="builder-say" id="builder-say">Empieza eligiendo tu base 👇</p>
+        <ul class="builder-list" id="builder-list"></ul>
+        <div class="builder-total"><span>Total</span><b id="builder-total">$85</b></div>
+        <button class="btn btn-orange full" id="builder-add" disabled>AGREGAR A MI PEDIDO</button>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- PLANES -->
+<section class="dark" id="planes">
+  <div class="wrap">
+    <p class="eyebrow">PLANES SEMANALES</p>
+    <h2>PROGRAMA TU SEMANA <span class="hl-yellow">Y PAGA MENOS.</span></h2>
+    <p class="sub light">Elige cuántas comidas quieres a la semana y qué días. Sin contratos: lo pausas cuando quieras (en vacaciones o semana de exámenes).</p>
+    <div class="plans" id="plans"></div>
+    <div class="plan-config" id="plan-config" hidden>
+      <h3 id="plan-config-title">Elige tus días</h3>
+      <div class="days" id="days"></div>
+      <p class="plan-hint" id="plan-hint"></p>
+      <label class="check"><input type="checkbox" id="plan-surprise" checked> Sorpréndeme con el bowl del día (cambia cada día)</label>
+      <button class="btn btn-yellow" id="plan-add" disabled>AGREGAR PLAN A MI PEDIDO</button>
+    </div>
+  </div>
+</section>
+
+<!-- COMO FUNCIONA / ENTREGA -->
+<section class="section" id="como">
+  <div class="wrap">
+    <h2>¿CÓMO TE <span class="hl-orange">LLEGA?</span></h2>
+    <div class="how">
+      <div class="how-card">
+        <span class="how-num">1</span>
+        <h3>Pide antes de las 10:30 am</h3>
+        <p>Eliges tu bowl o tu plan aquí y se manda tu pedido directo a nuestro WhatsApp. Pagas por transferencia; si no llega el comprobante en 1 hora, se libera tu lugar.</p>
+        <img src="img/pepe-cel.webp" alt="Pepe con el celular" width="200" height="200" loading="lazy">
+      </div>
+      <div class="how-card">
+        <span class="how-num">2</span>
+        <h3>Recoge en campus · 2:00 pm</h3>
+        <p>Punto fijo en las bancas de Ingeniería. Compartimos ubicación en tiempo real 15 minutos antes. ¿Traes tu tupper? <b>$5 de descuento.</b></p>
+        <img src="img/combo.webp" alt="Combo: bowl, agua de horchata y cubiertos" width="200" height="150" loading="lazy" class="how-photo">
+      </div>
+      <div class="how-card">
+        <span class="how-num">3</span>
+        <h3>O a domicilio · 1:30 a 3:00 pm</h3>
+        <p>Residencias y fraccionamientos a 3 km del campus. Envío <b>$20</b>, <b>gratis</b> en pedidos de 3 comidas o más a la misma dirección y en planes de 4 o más.</p>
+        <img src="img/pepe-bici.webp" alt="Pepe repartiendo en bici" width="200" height="200" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONFIANZA -->
+<section class="trust">
+  <div class="wrap trust-grid">
+    <div><b>🧑‍🍳 Cocina de casa</b><p>Cocineras de la zona, con cofia y guantes. Foto de la cocina cada semana en el grupo.</p></div>
+    <div><b>🥜 Alergias bajo control</b><p>Cada platillo dice sus ingredientes. Nos avisas tu alergia una vez y la cuidamos siempre.</p></div>
+    <div><b>⭐ Tú calificas</b><p>Al final del día calificas el sabor. El bowl peor calificado sale del menú.</p></div>
+    <div><b>🎓 Hecho por estudiantes</b><p>Somos alumnos de la Anáhuac Mayab que también se quedaban sin comer bien.</p></div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" id="faq">
+  <div class="wrap narrow">
+    <h2>PREGUNTAS <span class="hl-orange">FRECUENTES.</span></h2>
+    <details><summary>¿Qué incluye la comida completa?</summary><p>Un bowl de unos 450 g (base, proteína, frijoles, dos verduras y salsa), un agua del día de 500 ml (horchata, jamaica o limón con chía) y un postre chico (fruta con chile, gelatina o arroz con leche).</p></details>
+    <details><summary>¿Cómo pago?</summary><p>Por transferencia. Al enviar tu pedido te mandamos la cuenta por WhatsApp. Si en 1 hora no llega el comprobante, se libera tu porción para alguien más.</p></details>
+    <details><summary>¿Hasta qué hora puedo pedir?</summary><p>De lunes a viernes, hasta las 10:30 am para el mismo día. Los planes se programan para toda la semana.</p></details>
+    <details><summary>¿Qué pasa si alguien se enferma o tiene alergia?</summary><p>Todos los ingredientes están en el menú, llevamos una lista de alergias de cada cliente y no usamos mariscos ni mayonesa. Si algo sale mal, respondemos nosotros como equipo y se reembolsa la comida.</p></details>
+    <details><summary>¿Puedo pausar mi plan?</summary><p>Sí. Avísanos antes del viernes y la siguiente semana no se te cobra.</p></details>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="final">
+  <div class="wrap final-inner">
+    <h2>¿HAMBRE ENTRE CLASES? <span class="hl-yellow">YA LLEGÓ.</span></h2>
+    <a href="#menu" class="btn btn-yellow">PIDE TU BOWL →</a>
+    <img class="pepe-full" src="img/pepe-lleno.webp" alt="Pepe lleno y feliz" width="260" height="260" loading="lazy">
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <img src="img/logo.webp" alt="Los Estudiahambres" width="220" height="148" loading="lazy">
+    <p>De estudiantes, para estudiantes · Anáhuac Mayab, Mérida<br>Proyecto de la materia de Liderazgo · Miguel, Diego, Aarón, Luna y Gael</p>
+  </div>
+</footer>
+
+<!-- Pepe que se asoma -->
+<button class="pepe-peek" id="pepe-peek" aria-label="Pepe se asoma. Tócalo">
+  <img src="img/pepe-asoma.webp" alt="" width="150" height="150">
+  <span class="bubble" id="bubble-peek">psst… ¿ya pediste? 👀</span>
+</button>
+
+<!-- WhatsApp flotante -->
+<a class="wa-float" id="wa-float" href="https://wa.me/529841791457?text=Hola%20Estudiahambres%20%F0%9F%91%8B%20quiero%20info" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">
+  <svg viewBox="0 0 32 32" width="30" height="30" fill="#fff"><path d="M16 3C9 3 3.3 8.7 3.3 15.7c0 2.5.7 4.8 1.9 6.8L3 29l6.7-2.1c1.9 1 4.1 1.6 6.3 1.6 7 0 12.7-5.7 12.7-12.7S23 3 16 3zm0 23.2c-2 0-3.9-.6-5.6-1.6l-.4-.2-4 1.2 1.3-3.8-.3-.4c-1.1-1.7-1.7-3.7-1.7-5.7C5.3 9.9 10.1 5.2 16 5.2s10.7 4.7 10.7 10.6S21.9 26.2 16 26.2zm5.9-7.9c-.3-.2-1.9-1-2.2-1.1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.2-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.4.3-.6.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.2-1.2 2.9s1.2 3.4 1.4 3.6c.2.2 2.4 3.7 5.9 5.1 2.9 1.1 3.5.9 4.1.9.6-.1 1.9-.8 2.2-1.5.3-.8.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4z"/></svg>
+</a>
+
+<!-- Carrito -->
+<div class="drawer-backdrop" id="backdrop" hidden></div>
+<aside class="drawer" id="drawer" aria-label="Mi pedido" aria-hidden="true">
+  <div class="drawer-head">
+    <h3>Mi pedido</h3>
+    <button class="icon-btn" id="close-cart" aria-label="Cerrar">✕</button>
+  </div>
+  <div class="drawer-body">
+    <ul class="cart-list" id="cart-list"></ul>
+    <div class="cart-empty" id="cart-empty">
+      <img src="img/pepe-hambre.webp" alt="" width="140" height="140">
+      <p>Tu pedido está vacío… Pepe tiene hambre.</p>
+    </div>
+    <form id="order-form" class="order-form">
+      <fieldset class="seg">
+        <legend>¿Cómo lo quieres?</legend>
+        <label><input type="radio" name="mode" value="recoger" checked> <span>Recojo en campus · 2:00 pm</span></label>
+        <label><input type="radio" name="mode" value="domicilio"> <span>A domicilio · +$20</span></label>
+      </fieldset>
+      <label class="field">Tu nombre<input required name="nombre" autocomplete="given-name" placeholder="Ej. Pepe"></label>
+      <label class="field" id="addr-field" hidden>Dirección (zona Anáhuac Mayab)<input name="direccion" placeholder="Residencia, calle, número"></label>
+      <label class="field">Alergias o indicaciones<input name="notas" placeholder="Ej. sin cebolla, alérgico al cacahuate"></label>
+      <label class="check"><input type="checkbox" name="tupper"> Llevo mi tupper (−$5 por comida, solo para recoger)</label>
+      <div class="totals">
+        <div><span>Subtotal</span><span id="t-sub">$0</span></div>
+        <div><span>Envío</span><span id="t-env">$0</span></div>
+        <div><span>Descuento</span><span id="t-desc">$0</span></div>
+        <div class="grand"><span>Total</span><span id="t-total">$0</span></div>
+      </div>
+      <button class="btn btn-green full" id="send-order" type="submit" disabled>ENVIAR PEDIDO POR WHATSAPP</button>
+      <p class="tiny">Se abre WhatsApp con tu pedido listo. Te respondemos con los datos para la transferencia.</p>
+    </form>
+  </div>
+</aside>
+
+<!-- Confirmación -->
+<div class="modal" id="modal" hidden>
+  <div class="modal-card">
+    <img src="img/pepe-lleno.webp" alt="Pepe feliz" width="200" height="200">
+    <h3>¡PEDIDO ENVIADO!</h3>
+    <p>Termina de mandarlo en WhatsApp y comparte tu comprobante. Pepe ya está saboreando por ti.</p>
+    <button class="btn btn-dark" id="modal-close">VOLVER</button>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
