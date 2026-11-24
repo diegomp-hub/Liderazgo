@@ -1,0 +1,84 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Bricolage+Grotesque:opsz,wght@12..96,800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+body{margin:0;width:1080px;height:1350px;font-family:Archivo,sans-serif;overflow:hidden;position:relative}
+.card{position:absolute;inset:0;padding:70px;display:flex;flex-direction:column}
+h1{font-family:'Bricolage Grotesque';font-weight:800;font-size:118px;line-height:.9;letter-spacing:-.03em;margin:0}
+h2{font-family:'Bricolage Grotesque';font-weight:800;font-size:64px;line-height:.95;margin:0;letter-spacing:-.02em}
+.tag{display:inline-block;font-weight:800;font-size:30px;letter-spacing:.12em;padding:12px 26px;border-radius:999px;transform:rotate(-2deg);align-self:flex-start}
+.foot{margin-top:auto;display:flex;justify-content:space-between;align-items:center;font-weight:800;font-size:30px}
+.logo{display:flex;align-items:center;gap:14px;font-family:'Bricolage Grotesque';font-size:38px}
+.logo img{width:64px;height:64px;border-radius:14px}
+.url{padding:14px 26px;border-radius:999px}
+p{font-size:36px;line-height:1.3;margin:0;font-weight:600}
+.pepe{position:absolute;z-index:5}
+</style></head><body><div id="root"></div>
+<script>
+const C={cream:'#FFF6E9',ink:'#1E1B2E',orange:'#FF6B2C',yellow:'#FFC93C',green:'#2BB673',lime:'#C9F27B'};
+const P=new URLSearchParams(location.search), t=P.get('t');
+const logo=(dark,acc)=>`<div class="logo" style="color:${dark?C.cream:C.ink}"><img src="../site/img/pepe-icono.webp"><span>los estudia<span style="color:${acc||C.orange}">hambres</span></span></div>`;
+const url=(bg,fg)=>`<span class="url" style="background:${bg};color:${fg}">estudiahambres.vercel.app</span>`;
+const B={
+ chipotle:['POLLO CHIPOTLE','Arroz con cilantro · pollo al chipotle · frijol negro · elote · aguacate · pico de gallo','bowl-chipotle','Horchata','Fruta con chile'],
+ cochinita:['COCHINITA BOWL','Arroz blanco · cochinita pibil · cebolla con habanero (aparte) · frijol · pepino · aguacate','bowl-cochinita','Jamaica','Arroz con leche'],
+ asada:['ASADA CON NOPALES','Arroz integral · carne asada · frijoles charros · nopales · elote · salsa verde · queso fresco','bowl-asada','Limón con chía','Gelatina'],
+ tinga:['TINGA BOWL','Arroz blanco · tinga de pollo · frijoles refritos · lechuga · crema · queso fresco · aguacate','bowl-tinga','Horchata','Fruta con chile'],
+ veggie:['VEGGIE PANELA','Arroz rojo · frijol negro · panela asada · calabacitas con elote · pico de gallo · aguacate','bowl-veggie','Jamaica','Gelatina'],
+};
+let h='';
+if(t==='menu'){const b=B[P.get('b')];
+ h=`<div class="card" style="background:${C.cream};color:${C.ink}">
+  <span class="tag" style="background:${C.orange};color:#fff">☀️ BOWL DEL DÍA</span>
+  <h1 style="margin-top:34px">${b[0]}</h1>
+  <div style="position:relative;margin:36px -70px 0;height:600px"><img src="../site/img/${b[2]}.webp" style="width:100%;height:100%;object-fit:cover"></div>
+  <img class="pepe" src="../site/img/pepe-bowl.webp" style="width:300px;right:30px;top:360px;filter:drop-shadow(0 12px 20px rgba(0,0,0,.25))">
+  <p style="margin-top:30px;font-size:30px;color:#4a4560">${b[1]}</p>
+  <div style="display:flex;gap:16px;margin-top:22px;flex-wrap:wrap">
+   <span class="tag" style="background:${C.yellow};transform:none;font-size:26px;letter-spacing:.02em">🥤 ${b[3]}</span>
+   <span class="tag" style="background:${C.green};color:#fff;transform:none;font-size:26px;letter-spacing:.02em">🍮 ${b[4]}</span>
+   <span class="tag" style="background:${C.ink};color:#fff;transform:none;font-size:26px;letter-spacing:.02em">$85 · plan desde $70</span></div>
+  <div class="foot">${logo()}${url(C.orange,'#fff')}</div></div>`}
+if(t==='cupo'){h=`<div class="card" style="background:${C.orange};color:#fff">
+  <span class="tag" style="background:${C.ink};color:${C.yellow}">⏳ CIERRA 10:30 AM</span>
+  <h1 style="margin-top:50px;font-size:150px">¡QUEDAN<br><span style="color:${C.yellow}">POCAS!</span></h1>
+  <p style="margin-top:34px;max-width:620px;font-size:40px">Las porciones del bowl del día se están acabando. Aparta la tuya ya.</p>
+  <img class="pepe" src="../site/img/pepe-hambre.webp" style="width:560px;right:20px;bottom:170px">
+  <div class="foot">${logo(true,C.yellow)}${url(C.ink,'#fff')}</div></div>`}
+if(t==='cierre'){h=`<div class="card" style="background:${C.ink};color:${C.cream}">
+  <span class="tag" style="background:${C.lime};color:${C.ink}">✅ 10:30 AM</span>
+  <h1 style="margin-top:50px">¡CERRAMOS<br>PEDIDOS<br><span style="color:${C.lime}">DE HOY!</span></h1>
+  <p style="margin-top:34px;max-width:600px;color:#CFCADB">¿Te quedaste sin? Mañana abrimos a las <b style="color:#fff">7:30 am</b>. Con un plan semanal ya tienes tu lugar seguro 😉</p>
+  <img class="pepe" src="../site/img/pepe-lleno.webp" style="width:520px;right:10px;bottom:160px">
+  <div class="foot">${logo(true)}${url(C.orange,'#fff')}</div></div>`}
+if(t==='entrega'){h=`<div class="card" style="background:${C.green};color:#fff">
+  <span class="tag" style="background:#fff;color:${C.ink}">🛵 1:45 PM</span>
+  <h1 style="margin-top:50px">¡YA VAMOS<br><span style="color:${C.ink}">EN CAMINO!</span></h1>
+  <p style="margin-top:34px;max-width:640px">🎒 Recoge a las <b>2:00 pm</b> en las bancas de Ingeniería.<br>📍 Ubicación en tiempo real ⬇️<br>Ten tu folio <b>EH-XXXX</b> a la mano.</p>
+  <img class="pepe" src="../site/img/pepe-bici.webp" style="width:620px;right:-10px;bottom:150px">
+  <div class="foot">${logo()}${url(C.ink,'#fff')}</div></div>`}
+if(t==='califica'){h=`<div class="card" style="background:${C.yellow};color:${C.ink}">
+  <span class="tag" style="background:${C.ink};color:#fff">⭐ 4:00 PM</span>
+  <h1 style="margin-top:50px">¿QUÉ TAL<br>ESTUVO<br><span style="color:${C.orange}">HOY?</span></h1>
+  <p style="margin-top:34px;max-width:560px">Califica el bowl del día en la encuesta 👇<br>El peor calificado <b>sale del menú.</b></p>
+  <div style="display:flex;gap:18px;margin-top:40px;font-size:80px">🤩 😋 😐 😕</div>
+  <img class="pepe" src="../site/img/pepe-lleno.webp" style="width:480px;right:20px;bottom:170px">
+  <div class="foot">${logo()}${url(C.ink,'#fff')}</div></div>`}
+if(t==='planes'){const pl=[[1,'Oyente',82],[2,'Medio Turno',79],[3,'Regular',76,'⭐'],[4,'Cuadro de Honor',73,'🛵'],[5,'Beca Completa',70,'🛵']];
+ const dias=[['L','Pollo Chipotle'],['M','Cochinita Bowl'],['X','Veggie Panela'],['J','Tinga Bowl'],['V','Asada con Nopales']];
+ h=`<div class="card" style="background:${C.ink};color:${C.cream}">
+  <span class="tag" style="background:${C.yellow};color:${C.ink}">📅 MENÚ DE LA SEMANA</span>
+  <h2 style="margin-top:30px;font-size:96px">ARMA TU<br><span style="color:${C.yellow}">SEMANA.</span></h2>
+  <div style="display:grid;gap:10px;margin-top:30px">${dias.map(d=>`<div style="display:flex;gap:18px;align-items:center;font-size:34px;font-weight:700"><span style="width:58px;height:58px;border-radius:14px;background:${C.orange};color:#fff;display:grid;place-items:center;font-weight:800">${d[0]}</span>${d[1]}</div>`).join('')}</div>
+  <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:40px">${pl.map(p=>`<div style="background:${p[0]==3?C.yellow:'#2B2740'};color:${p[0]==3?C.ink:C.cream};border-radius:20px;padding:18px 14px;text-align:center"><div style="font-family:'Bricolage Grotesque';font-size:64px;line-height:1">${p[0]}</div><div style="font-size:17px;font-weight:700;min-height:40px">${p[1]}</div><div style="font-family:'Bricolage Grotesque';font-size:36px;color:${p[0]==3?C.ink:C.orange}">$${p[2]}</div><div style="font-size:15px">c/u ${p[3]||''}</div></div>`).join('')}</div>
+  <p style="font-size:24px;color:#CFCADB;margin-top:16px">comidas por semana · ⭐ el más pedido · 🛵 envío gratis</p>
+  <img class="pepe" src="../site/img/pepe-cel.webp" style="width:340px;right:40px;top:200px">
+  <div class="foot">${logo(true)}${url(C.orange,'#fff')}</div></div>`}
+if(t==='bienvenida'){h=`<div class="card" style="background:${C.cream};color:${C.ink}">
+  <span class="tag" style="background:${C.green};color:#fff">DE ESTUDIANTES, PARA ESTUDIANTES</span>
+  <h1 style="margin-top:50px">¡BIENVENID@,<br><span style="color:${C.orange}">ESTUDIAHAMBRE!</span></h1>
+  <p style="margin-top:34px;max-width:600px">Soy <b>Pepe</b> 🧢. Lee el mensaje fijado 📌 y pide tu primer bowl.<br><br>🥣 Bowl + 🥤 agua + 🍮 postre<br><b style="color:${C.orange}">$85 · desde $70 con plan</b></p>
+  <img class="pepe" src="../site/img/pepe-hola.webp" style="width:560px;right:0;bottom:150px">
+  <div class="foot">${logo()}${url(C.orange,'#fff')}</div></div>`}
+document.getElementById('root').innerHTML=h;
+</script></body></html>
