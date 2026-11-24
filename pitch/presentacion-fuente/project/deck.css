@@ -70,6 +70,22 @@ p{margin:0}
 /* tabla comparativa */
 .cmp{width:100%;font-size:28px;color:var(--ink)}
 
+/* pasos de la app */
+.howto{display:flex;gap:32px;margin-top:36px}
+.howto .col{width:252px;display:flex;flex-direction:column;gap:14px}
+.howto .phone{width:252px;height:470px;object-fit:cover;border-radius:28px;border:6px solid #1E1B2E;box-sizing:border-box}
+.howto .lab{display:flex;gap:10px;align-items:flex-start}
+.howto .n{width:40px;height:40px;border-radius:50%;background:#FF6B2C;color:#fff;font-family:var(--display);font-weight:800;font-size:24px;display:flex;align-items:center;justify-content:center;flex:none}
+.howto h3{font-size:28px;line-height:1.1}
+.howto p{font-size:24px;line-height:1.25;color:var(--muted)}
+
+/* dashboard con marcadores */
+.mk{position:absolute;width:48px;height:48px;border-radius:50%;background:#FF6B2C;color:#fff;font-family:var(--display);font-weight:800;font-size:26px;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 5px rgba(255,107,44,.3)}
+.feat{display:flex;gap:16px;align-items:flex-start}
+.feat .n{width:44px;height:44px;border-radius:50%;background:#FF6B2C;color:#fff;font-family:var(--display);font-weight:800;font-size:24px;display:flex;align-items:center;justify-content:center;flex:none}
+.feat h3{font-size:28px;line-height:1.1}
+.feat p{font-size:24px;line-height:1.25;color:var(--muted)}
+
 /* llegada */
 @keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
 @keyframes pop{from{opacity:0;transform:scale(0.85)}to{opacity:1;transform:scale(1)}}

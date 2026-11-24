@@ -17,11 +17,11 @@
 | Mercado objetivo | Diapositiva 5 · 6,455 alumnos + 3 perfiles de cliente | Luna |
 | Declaración de solución | Diapositiva 6 · Eliges → Apartas → Comes | Miguel |
 | Propuesta de valor | Diapositiva 7 · tabla contra la cafetería + "de estudiantes, para estudiantes" | Miguel |
-| Prototipo | Diapositivas 8 y 9 · página con QR en vivo, panel de pedidos y WhatsApp | Aarón y Gael |
+| Prototipo | Diapositiva 8 · cómo se usa la app en 6 pasos + QR en vivo · Diapositiva 9 · el dashboard explicado parte por parte | Aarón y Gael |
 | Factibilidad | Diapositiva 10 · costos, margen, piloto, inversión y feedback aplicado | Gael |
 | Imagen del expositor | Sección 5 de este documento | Todos |
 | Habilidades de comunicación | Notas de tono en cada parte + sección 6 | Todos |
-| Presentación | Video, diseño de marca, demo en vivo, cierre con petición | Todos |
+| Presentación | Video, diseño de marca, demo en vivo, cierre memorable | Todos |
 
 ---
 
@@ -36,13 +36,13 @@
 | 5 | Mercado objetivo | **Luna** | 0:25 |
 | 6 | La solución | **Miguel** | 0:30 |
 | 7 | Propuesta de valor | **Miguel** | 0:25 |
-| 8 | Prototipo (QR en vivo) | **Aarón** | 0:40 |
-| 9 | Operación (panel y WhatsApp) | **Gael** | 0:20 |
-| 10 | Factibilidad | **Gael** | 0:40 |
-| 11 | Cierre y petición | **Diego** | 0:25 |
+| 8 | Cómo se usa la app (6 pasos + QR) | **Aarón** | 0:45 |
+| 9 | El dashboard del equipo | **Gael** | 0:30 |
+| 10 | Factibilidad | **Gael** | 0:35 |
+| 11 | Cierre | **Diego** | 0:15 |
 | | **Total** | | **≈ 4:45** |
 
-**Por persona:** Diego 1:05 · Luna 0:55 · Miguel 0:55 · Gael 1:00 · Aarón 0:40 (+ controla la compu y la demo).
+**Por persona:** Diego 0:55 · Luna 0:55 · Miguel 0:55 · Gael 1:05 · Aarón 0:45 (+ controla la compu y la demo).
 Todos hablan de forma equilibrada, y Diego abre, conecta y cierra como CEO.
 
 ---
@@ -93,33 +93,43 @@ Todos hablan de forma equilibrada, y Diego abre, conecta y cierra como CEO.
 > "¿Qué nos hace diferentes? Por **el mismo precio** que la cafetería te llevas un bowl de 450 gramos, agua **y postre**. Sin fila, con entrega, y si te suscribes, baja hasta **70 pesos**.
 > Pero lo más importante (pausa): somos **de estudiantes, para estudiantes**. Sabemos lo que se siente tener hambre entre clases. Aarón les va a enseñar que esto ya funciona."
 
-### Diapositiva 8 · Prototipo (0:40) — AARÓN
-(Saca tu celular y levántalo. Sonríe.)
-> "Y esto no es una idea en papel: **ya funciona**. Saquen su celular y escaneen el código. (pausa de 3 segundos, celular en alto)
-> Ahí pueden ver el menú, armar su bowl a su gusto, elegir un plan semanal y mandar su pedido. **Pepe** los acompaña en todo el camino, y el pedido llega directo a nuestro WhatsApp con el total ya calculado."
+### Diapositiva 8 · Cómo se usa la app (0:45) — AARÓN
+(Saca tu celular y levántalo. Señala cada celular de la pantalla al decir su número.)
+> "Y esto no es una idea en papel: **ya funciona**. Escaneen el código. (pausa de 3 segundos)
+> Así se usa:
+> **Uno**, eliges un bowl del menú, cada uno con sus ingredientes a la vista.
+> **Dos**, o lo armas a tu gusto: base, proteína, toppings, salsa, agua y postre, y **Pepe** te va diciendo qué tal quedó.
+> **Tres**, si comes con nosotros seguido, eliges un **plan semanal** y tus días, y te sale más barato.
+> **Cuatro**, decides si lo recoges en el campus o te llega a domicilio.
+> **Cinco**, pones tu WhatsApp y tus alergias.
+> Y **seis**, lo envías: se abre WhatsApp con tu pedido ya escrito y el total calculado, mandas tu transferencia… y listo."
 
 (Si el evaluador escanea, dile con una sonrisa: "Toque a Pepe, le va a hablar.")
 
-### Diapositiva 9 · Operación (0:20) — GAEL
-(Señala primero el panel y luego el celular.)
-> "Y del otro lado, nosotros vemos **cada pedido en vivo** en nuestro panel: cuántos bowls hay que cocinar, quién ya pagó, quién recoge en el campus, quién pidió a domicilio y quién tiene alergias.
-> En el grupo de WhatsApp solo damos avisos: el menú del día, cuántas porciones quedan, la entrega y la calificación del día."
+### Diapositiva 9 · El dashboard del equipo (0:30) — GAEL
+(Señala cada número en la pantalla.)
+> "Y del otro lado está nuestro **dashboard**. Solo el equipo entra, con usuario y contraseña.
+> **Uno:** arriba vemos el resumen del día: pedidos, comidas, ventas y lo que falta por cobrar.
+> **Dos:** cada pedido tiene su estado: nuevo, pagado, preparando, en camino y entregado.
+> **Tres:** con un toque le escribimos al cliente por WhatsApp.
+> **Cuatro:** la lista de cocina le dice a la cocinera cuántos bowls de cada tipo hacer.
+> **Cinco:** sabemos quién recoge y quién va a domicilio.
+> **Seis:** las alergias del día, siempre a la vista.
+> Y **siete:** todo llega **en vivo**, suena cuando entra un pedido y lo descargamos en Excel."
 
-### Diapositiva 10 · Factibilidad (0:40) — GAEL
+### Diapositiva 10 · Factibilidad (0:35) — GAEL
 (Seguro y con calma: es la parte que más pesa en la rúbrica.)
 > "¿Los números? Cada comida nos cuesta alrededor de **47 pesos** en insumos y empaque. La cocinera recibe **60**, y a nosotros nos quedan unos **20 pesos por comida**.
 > Con un piloto de 15 comidas al día, cinco días, son 75 comidas y **1,500 pesos a la semana** para el equipo.
 > La tecnología nos costó **cero pesos**: la página y el panel ya están funcionando.
 > Y aplicamos todo el feedback del Equipo 3: alergias a la vista, entrega a las 2, comprobante en una hora, calificación diaria y descuento por traer tupper. Diego."
 
-### Diapositiva 11 · Cierre y petición (0:25) — DIEGO
+### Diapositiva 11 · Cierre (0:15) — DIEGO
 (Vuelve al centro; el equipo se acerca detrás. Voz más fuerte y más lenta.)
-> "Por eso, tiburones, buscamos **7,000 pesos por el 10%** de Los Estudiahambres. Con eso compramos el primer lote de insumos, los empaques y las mochilas térmicas, y lo recuperamos en **cinco semanas**. (pausa)
-> Somos de estudiantes, para estudiantes. **¿Quién quiere comer con nosotros?**"
+> "Los Estudiahambres: comida completa, casera y bien servida, **de estudiantes, para estudiantes**. (pausa)
+> **¿Quién quiere comer con nosotros?**"
 
 (Los cinco juntos: **"¡Gracias!"**. Sonríen y se quedan quietos esperando preguntas.)
-
-> Si al profesor no le late lo de "tiburones", cámbienlo por "jurado". El resto queda igual.
 
 ---
 
@@ -136,9 +146,10 @@ Todos hablan de forma equilibrada, y Diego abre, conecta y cierra como CEO.
 | ¿Por qué no compite la cafetería con ustedes? | Luna | "Ellos venden en el campus; nosotros llevamos a residencias, con planes semanales y comida casera. Somos complemento para quien no alcanza a ir." |
 | ¿Cuánto gana la cocinera? | Gael | "Recibe 60 pesos por comida; con insumos de unos 47, le quedan unos 13 por comida. Con 75 comidas a la semana son casi mil pesos extra." |
 | ¿Y si crece mucho? | Diego | "Sumamos más cocineras de la zona; el panel ya está hecho para manejar más pedidos sin depender del chat." |
-| ¿Por qué 10% por 7,000? | Diego | "Es lo justo para arrancar sin deuda. Con 20 pesos por comida lo recuperamos en unas cinco semanas." |
+| ¿Cuánto necesitan para arrancar? | Diego | "Unos 7,000 pesos: insumos de la primera semana, empaques, dos mochilas térmicas y publicidad en campus. Con 20 pesos por comida se recupera en unas cinco semanas." |
 | ¿Cómo entregan a domicilio? | Gael | "Ruta de 1:30 a 3:00 en residencias a 3 km del campus; envío de 20 pesos, gratis desde 3 comidas o en planes de 4 o más." |
 | ¿Y la página, quién la hizo? | Aarón | "La hicimos nosotros. Está en estudiahambres.vercel.app y los pedidos se guardan en una base de datos que solo ve el equipo." |
+| ¿Quién usa el dashboard y cuándo? | Gael | "Diego lo revisa de 7:30 a 10:30 para cobrar, Miguel saca de ahí la lista de cocina, Luna revisa las alergias y yo marco las entregas." |
 
 ---
 
